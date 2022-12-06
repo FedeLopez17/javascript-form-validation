@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <script src="./script.js" defer></script>
+        <link rel="icon" type="image/x-icon" href="./favicon.ico">
+        <title>JavaScript form validation</title>
+    </head>
+    <body>
+        <form novalidate>
+            <section class="wrapper" id="email-wrapper">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="example@email.com" required>
+                <span class="error-message-container"></span>
+            </section>
+
+            <section class="wrapper" id="country-wrapper">
+                <label for="country">Country:</label>
+                <!-- This pattern matches any string of only letters and spaces. -->
+                <input type="text" id="country" pattern="^[a-zA-Z ]*$" minlength="2" placeholder="Ecuador" required>
+                <span class="error-message-container"></span>
+            </section>
+
+            <section class="wrapper" id="zip-code-wrapper">
+                <label for="zip-code">Zip code:</label>
+                <!-- This pattern matches five numeric digits, such as a zip code. -->
+                <input type="text" id="zip-code" pattern="^\d{5}$" placeholder="XXXXX" required> 
+                <span class="error-message-container"></span>
+            </section>
+
+            <section class="wrapper" id="password-wrapper">
+                <label for="password">Password:</label>
+                <input type="password" id="password" minlength="8" required>
+                <span class="error-message-container"></span>
+            </section>
+
+            <section class="wrapper" id="password-confirmation-wrapper">
+                <label for="password-confirmation">Password confimation:</label>
+                <input type="password" id="password-confirmation" required>
+                <span class="error-message-container"></span>
+            </section>
+
+            <button type="button">Submit</button>
+        </form>
+    </body>
+</html>
